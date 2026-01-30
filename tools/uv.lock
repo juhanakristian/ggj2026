@@ -1,0 +1,23 @@
+version = 1
+revision = 3
+requires-python = ">=3.13"
+
+[[package]]
+name = "midifile"
+version = "0.2.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/1b/03/06746d7fb7da39d7ab504a1e2e770f8d85764c0f190a3e2c4d42a5dda1d3/MIDIFile-0.2.0.tar.gz", hash = "sha256:80ce221ace9d41961d2d4297a41f3cce7d0e5a21592decd93f4ea40a3ae99b51", size = 144353, upload-time = "2022-11-18T18:28:24.159Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/31/06/d052fbf95ab9bad77321c761f234bedc9bdd3cd2608fa6583a8a48ef011f/MIDIFile-0.2.0-py3-none-any.whl", hash = "sha256:bf793840af7cbf008f4fb94d7781f49e184dd0b6c8e8144fd91047b381596225", size = 33258, upload-time = "2022-11-18T18:28:21.287Z" },
+]
+
+[[package]]
+name = "tools"
+version = "0.1.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "midifile" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "midifile", specifier = ">=0.2.0" }]
