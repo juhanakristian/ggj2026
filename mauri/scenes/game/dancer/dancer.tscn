@@ -18,4 +18,4 @@ metadata/_custom_type_script = "uid://cohe14cnx3vw5"
 [node name="Camera3D" type="Camera3D" parent="." unique_id=679210792]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.062456, 2.884911)
 
-[connection signal="mask_updated" from="NoteController" to="." method="_on_note_controller_mask_updated"]
+[connection signal="note_mask_updated" from="NoteController" to="." method="_on_note_controller_note_mask_updated"]
