@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cab1knnj3r7e6"]
+
+[ext_resource type="Script" uid="uid://cyoo2q26b0dax" path="res://scenes/game/dancer/src/dancer.gd" id="1_x4hem"]
+[ext_resource type="SpriteFrames" uid="uid://dj36s0ny30s80" path="res://scenes/game/dancer/sprite_frames/ph_frames.tres" id="2_x4hem"]
+
+[node name="Dancer" type="Node3D" unique_id=898125721]
+script = ExtResource("1_x4hem")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1351860417]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90796924, 0)
+sprite_frames = ExtResource("2_x4hem")

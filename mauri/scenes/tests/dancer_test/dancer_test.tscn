@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://da8ar2nfqhwn4"]
+
+[ext_resource type="Script" uid="uid://cohe14cnx3vw5" path="res://scenes/game/controller/note_controller.gd" id="1_7etse"]
+[ext_resource type="Script" uid="uid://ryj2b010ictv" path="res://scenes/tests/dancer_test/dancer_test.gd" id="1_w8ine"]
+[ext_resource type="PackedScene" uid="uid://cab1knnj3r7e6" path="res://scenes/game/dancer/dancer.tscn" id="2_w8ine"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_s3tgq"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_f83dx"]
+sky_material = SubResource("ProceduralSkyMaterial_s3tgq")
+
+[sub_resource type="Environment" id="Environment_0e2fk"]
+background_mode = 2
+sky = SubResource("Sky_f83dx")
+tonemap_mode = 2
+
+[node name="DancerTest" type="Node3D" unique_id=256278924]
+script = ExtResource("1_w8ine")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1938063501]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1825731248]
+environment = SubResource("Environment_0e2fk")
+
+[node name="NoteController" type="Node" parent="." unique_id=198778133]
+script = ExtResource("1_7etse")
+metadata/_custom_type_script = "uid://cohe14cnx3vw5"
+
+[node name="Dancer" parent="." unique_id=898125721 instance=ExtResource("2_w8ine")]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1153986489]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 4)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1674499761]
+
+[node name="NoteEventLog" type="RichTextLabel" parent="CanvasLayer" unique_id=2062590416]
+offset_left = 16.0
+offset_top = 11.0
+offset_right = 360.0
+offset_bottom = 376.0
+scroll_active = false
+scroll_following = true
+
+[connection signal="note_mask_updated" from="NoteController" to="." method="_on_note_controller_note_mask_updated"]
+[connection signal="note_mask_updated" from="NoteController" to="Dancer" method="_on_note_mask_updated"]
+[connection signal="note_pressed" from="NoteController" to="." method="_on_note_controller_note_pressed"]
+[connection signal="note_released" from="NoteController" to="." method="_on_note_controller_note_released"]
