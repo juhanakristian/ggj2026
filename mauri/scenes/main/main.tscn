@@ -33,4 +33,3 @@ transform = Transform3D(0.92998207, 0, 0.36760527, 0, 0.9999999, 0, -0.36760527,
 [node name="IntroMusicPlayer" type="AudioStreamPlayer3D" parent="." unique_id=1456553032]
 stream = ExtResource("7_hujxm")
 autoplay = true
-bus = &"IntroMusic"
