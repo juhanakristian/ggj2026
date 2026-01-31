@@ -12,6 +12,11 @@ const NOTE4 = "f"
 
 var level_notes: Array[String] = [NOTE1,NOTE2,NOTE3,NOTE4]
 
+var current_time: float = 0
+
+const MAX_RECEIVED_POINTS = 1000
+
+var points: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -34,9 +39,29 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	self.position.y -= delta * units_per_second
+	current_time += delta
+	self.position.y -= delta * float(units_per_second)
+
+	# print("Current time: " + str(current_time))
+	# print("Music time: " + str(music_player.get_playback_position()))
+	print("POINTS: " + str(points))
 
 func enable_level(enable):
 	set_process(enable)
 	if enable:
 		music_player.play()
+
+
+func _on_note_controller_note_pressed(note: String) -> void:
+	var result = level_data.do_note_check(note, current_time + 0.2) # latency hack
+	if result.note_event:
+		#print("Note time: " + str(result.note_event.start_time))
+		points += (1.0 - abs(result.timedelta)) * MAX_RECEIVED_POINTS
+	elif abs(result.timedelta) < 0.150:
+		points += (1.0 - abs(result.timedelta)) * MAX_RECEIVED_POINTS / 2
+
+	
+
+
+func _on_note_controller_note_released(note: String) -> void:
+	pass # Replace with function body.
