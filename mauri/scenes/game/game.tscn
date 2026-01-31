@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bxwk0ufvm456i" path="res://scenes/game/src/game.gd" id="1_sul5r"]
 [ext_resource type="Resource" uid="uid://ku2ebyahasyx" path="res://scenes/main/operators/curtain_operator.tres" id="2_0sr1o"]
+[ext_resource type="Script" uid="uid://cohe14cnx3vw5" path="res://scenes/game/controller/note_controller.gd" id="3_87uf6"]
 [ext_resource type="PackedScene" uid="uid://cfoe2y4shtix0" path="res://scenes/environment/environment.tscn" id="3_kelw5"]
 [ext_resource type="Texture2D" uid="uid://dggsr1d3cafuk" path="res://assets/characters/character_placeholder/character_placeholder_sheet.png" id="4_kelw5"]
 [ext_resource type="Script" uid="uid://8dkhit6bgge3" path="res://scenes/game/level/level.gd" id="5_5i0tg"]
@@ -13,6 +14,10 @@
 [node name="Game" type="Node" unique_id=346745799]
 script = ExtResource("1_sul5r")
 curtain_operator = ExtResource("2_0sr1o")
+
+[node name="NoteController" type="Node" parent="." unique_id=1249968310]
+script = ExtResource("3_87uf6")
+metadata/_custom_type_script = "uid://cohe14cnx3vw5"
 
 [node name="Environment" parent="." unique_id=1249255955 instance=ExtResource("3_kelw5")]
 
@@ -52,5 +57,8 @@ metadata/_custom_type_script = "uid://8dkhit6bgge3"
 stream = ExtResource("7_bdhmt")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=622196327]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.062103, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.868643, 0)
 mesh = SubResource("BoxMesh_bdhmt")
+
+[connection signal="note_pressed" from="NoteController" to="Level" method="_on_note_controller_note_pressed"]
+[connection signal="note_released" from="NoteController" to="Level" method="_on_note_controller_note_released"]

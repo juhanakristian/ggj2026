@@ -20,12 +20,18 @@ class NoteEvent:
 var note_events: Array[NoteEvent] = []
 
 class NoteCheckResult:
-	var is_correct: bool
+	var note_event: Variant
 	var timedelta: float
 
-	func _init(is_correct: bool, timedelta: float):
-		self.is_correct = is_correct
+	func _init(note_event: Variant, timedelta: float):
+		self.note_event = note_event
 		self.timedelta = timedelta
+
+	func _to_string() -> String:
+		if self.note_event:
+			return str(self.note_event) + " delta:" + str(self.timedelta)
+
+		return "null delta:" + str(self.timedelta)
 
 func init_level() -> void:
 	var json = JSON.new()
@@ -63,4 +69,15 @@ func get_note_data(note: String) -> Array[NoteEvent]:
 	return result
 
 func do_note_check(note: String, time: float) -> NoteCheckResult:
-	return NoteCheckResult.new(false, 0)
+	var events = get_note_data(note)
+	var found_event = null
+	var delta = 10000
+	for event in events:
+		if time > event.start_time and time < event.end_time:
+			found_event = event
+
+		var event_delta = event.start_time - time
+		if abs(event_delta) < abs(delta):
+			delta = event_delta
+
+	return NoteCheckResult.new(found_event, delta)
