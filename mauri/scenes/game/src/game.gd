@@ -5,6 +5,10 @@ enum State {INIT, WAIT, RUN, END}
 
 @export var curtain_operator : CurtainOperator
 @onready var test_environment: Node3D = $Environment
+@onready var music_player: AudioStreamPlayer3D = $MusicPlayer
+@onready var level: Level = $Level
+
+signal game_started()
 
 ## Sets processing flags
 func set_processing(enabled : bool):
@@ -20,11 +24,9 @@ func _ready() -> void:
 	set_processing(false)
 	enable_camera(false)
 
-	
 ## Method used for launching the game
 func start_game():
 	enable_camera(true)
 	await curtain_operator.fade_in(2.0).curtain_faded_in
 	
-	
-	
+	level.enable_level(true)
