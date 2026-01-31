@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://dggsr1d3cafuk" path="res://assets/characters/character_placeholder/character_placeholder_sheet.png" id="4_kelw5"]
 [ext_resource type="Script" uid="uid://8dkhit6bgge3" path="res://scenes/game/level/level.gd" id="5_5i0tg"]
 [ext_resource type="Resource" uid="uid://dhfuoy6a8prn5" path="res://scenes/game/level/example_level.tres" id="6_bdhmt"]
+[ext_resource type="AudioStream" uid="uid://d0tbsafcmlhjm" path="res://assets/audio/audio.mp3" id="7_bdhmt"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_bdhmt"]
 
 [node name="Game" type="Node" unique_id=346745799]
 script = ExtResource("1_sul5r")
@@ -37,8 +40,17 @@ texture = ExtResource("4_kelw5")
 region_enabled = true
 region_rect = Rect2(98.80086, 6.0420723, 113.44855, 169.04582)
 
-[node name="Level" type="Node3D" parent="." unique_id=1739362813]
+[node name="Level" type="Node3D" parent="." unique_id=1739362813 node_paths=PackedStringArray("music_player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.062103, 0)
 script = ExtResource("5_5i0tg")
 level_data = ExtResource("6_bdhmt")
+units_per_second = 8
+music_player = NodePath("../MusicPlayer")
 metadata/_custom_type_script = "uid://8dkhit6bgge3"
+
+[node name="MusicPlayer" type="AudioStreamPlayer3D" parent="." unique_id=1768287231]
+stream = ExtResource("7_bdhmt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=622196327]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.062103, 0)
+mesh = SubResource("BoxMesh_bdhmt")
