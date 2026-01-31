@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://dn8lga7obtaa2"]
-
-[ext_resource type="PackedScene" uid="uid://d1jf0tnn5lc14" path="res://assets/environment/volcano_placeholder/volcano_placeholder_v1.glb" id="1_fs5ij"]
-[ext_resource type="Material" uid="uid://x03juqusnec4" path="res://assets/environment/materials/lava_material/lava_material.tres" id="2_01uaf"]
-
-[node name="volcano_placeholder_v1" unique_id=1619030280 instance=ExtResource("1_fs5ij")]
-
-[node name="Cylinder" parent="." index="0" unique_id=1295315010]
-surface_material_override/1 = ExtResource("2_01uaf")
