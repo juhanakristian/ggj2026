@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cab1knnj3r7e6"]
+
+[ext_resource type="Script" uid="uid://cyoo2q26b0dax" path="res://scenes/game/dancer/src/dancer.gd" id="1_x4hem"]
+[ext_resource type="SpriteFrames" uid="uid://dj36s0ny30s80" path="res://scenes/game/dancer/sprite_frames/ph_frames.tres" id="2_x4hem"]
+[ext_resource type="Script" uid="uid://cohe14cnx3vw5" path="res://scenes/game/controller/note_controller.gd" id="3_pw7wt"]
+
+[node name="Dancer" type="Node3D" unique_id=898125721]
+script = ExtResource("1_x4hem")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1351860417]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90796924, 0)
+sprite_frames = ExtResource("2_x4hem")
+
+[node name="NoteController" type="Node" parent="." unique_id=58990920]
+script = ExtResource("3_pw7wt")
+metadata/_custom_type_script = "uid://cohe14cnx3vw5"
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=679210792]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.062456, 2.884911)
+
+[connection signal="mask_updated" from="NoteController" to="." method="_on_note_controller_mask_updated"]
