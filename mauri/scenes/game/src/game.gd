@@ -7,6 +7,7 @@ enum State {INIT, WAIT, RUN, END}
 @onready var test_environment: Node3D = $Environment
 @onready var music_player: AudioStreamPlayer3D = $MusicPlayer
 @onready var level: Level = $Level
+@onready var countdown_ui: CountdownUI = $CountdownUI
 
 signal game_started()
 
@@ -28,5 +29,5 @@ func _ready() -> void:
 func start_game():
 	enable_camera(true)
 	await curtain_operator.fade_in(2.0).curtain_faded_in
-	
+	await countdown_ui.start_countdown(3.0)
 	level.enable_level(true)

@@ -46,6 +46,7 @@ func start_countdown(time_sec : float):
 	enable_countdown_ui(true)
 	set_label_time(time_sec)
 	countdown_timer.start(time_sec)	
+	return countdown_finished
 	
 ## Process called only when the UI is active, updates the countdown label
 func _process(_delta: float) -> void:

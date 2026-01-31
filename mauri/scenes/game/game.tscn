@@ -5,9 +5,11 @@
 [ext_resource type="Script" uid="uid://cohe14cnx3vw5" path="res://scenes/game/controller/note_controller.gd" id="3_87uf6"]
 [ext_resource type="PackedScene" uid="uid://cfoe2y4shtix0" path="res://scenes/environment/environment.tscn" id="3_kelw5"]
 [ext_resource type="Texture2D" uid="uid://dggsr1d3cafuk" path="res://assets/characters/character_placeholder/character_placeholder_sheet.png" id="4_kelw5"]
+[ext_resource type="PackedScene" uid="uid://cab1knnj3r7e6" path="res://scenes/game/dancer/dancer.tscn" id="5_2a8rs"]
 [ext_resource type="Script" uid="uid://8dkhit6bgge3" path="res://scenes/game/level/level.gd" id="5_5i0tg"]
 [ext_resource type="Resource" uid="uid://dhfuoy6a8prn5" path="res://scenes/game/level/example_level.tres" id="6_bdhmt"]
 [ext_resource type="AudioStream" uid="uid://d0tbsafcmlhjm" path="res://assets/audio/audio.mp3" id="7_bdhmt"]
+[ext_resource type="PackedScene" uid="uid://cats1mblrfh8s" path="res://scenes/ui/countdown_ui/countdown_ui.tscn" id="10_4j704"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_bdhmt"]
 
@@ -25,11 +27,8 @@ metadata/_custom_type_script = "uid://cohe14cnx3vw5"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 14, 11)
 visible = false
 
-[node name="Character" type="Sprite3D" parent="." unique_id=1903589957]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6520802, 13.045979, 7.204897)
-texture = ExtResource("4_kelw5")
-region_enabled = true
-region_rect = Rect2(98.80086, 6.0420723, 113.44855, 169.04582)
+[node name="Dancer" parent="." unique_id=898125721 instance=ExtResource("5_2a8rs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3835448, 12.248176, 7.204897)
 
 [node name="Character2" type="Sprite3D" parent="." unique_id=72333191]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6164552, 13.045979, 7.204897)
@@ -60,5 +59,8 @@ stream = ExtResource("7_bdhmt")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.868643, 0)
 mesh = SubResource("BoxMesh_bdhmt")
 
+[node name="CountdownUI" parent="." unique_id=1228888125 instance=ExtResource("10_4j704")]
+
+[connection signal="note_mask_updated" from="NoteController" to="Dancer" method="_on_note_mask_updated"]
 [connection signal="note_pressed" from="NoteController" to="Level" method="_on_note_controller_note_pressed"]
 [connection signal="note_released" from="NoteController" to="Level" method="_on_note_controller_note_released"]
