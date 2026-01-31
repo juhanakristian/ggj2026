@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cr1ojwod8hxcw"]
+
+[ext_resource type="Script" uid="uid://bxwk0ufvm456i" path="res://scenes/game/src/game.gd" id="1_sul5r"]
+[ext_resource type="Resource" uid="uid://ku2ebyahasyx" path="res://scenes/main/operators/curtain_operator.tres" id="2_0sr1o"]
+[ext_resource type="PackedScene" uid="uid://cfoe2y4shtix0" path="res://scenes/environment/environment.tscn" id="3_kelw5"]
+[ext_resource type="Texture2D" uid="uid://dggsr1d3cafuk" path="res://assets/characters/character_placeholder/character_placeholder_sheet.png" id="4_kelw5"]
+
+[node name="Game" type="Node" unique_id=346745799]
+script = ExtResource("1_sul5r")
+curtain_operator = ExtResource("2_0sr1o")
+
+[node name="Environment" parent="." unique_id=1249255955 instance=ExtResource("3_kelw5")]
+
+[node name="GameCamera" type="Camera3D" parent="." unique_id=617032508]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 14, 11)
+visible = false
+
+[node name="Character" type="Sprite3D" parent="." unique_id=1903589957]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6520802, 13.045979, 7.204897)
+texture = ExtResource("4_kelw5")
+region_enabled = true
+region_rect = Rect2(98.80086, 6.0420723, 113.44855, 169.04582)
+
+[node name="Character2" type="Sprite3D" parent="." unique_id=72333191]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6164552, 13.045979, 7.204897)
+billboard = 2
+texture = ExtResource("4_kelw5")
+region_enabled = true
+region_rect = Rect2(98.80086, 6.0420723, 113.44855, 169.04582)
+
+[node name="Character3" type="Sprite3D" parent="." unique_id=1356180725]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.291936, 13.045979, 7.204897)
+billboard = 2
+texture = ExtResource("4_kelw5")
+region_enabled = true
+region_rect = Rect2(98.80086, 6.0420723, 113.44855, 169.04582)

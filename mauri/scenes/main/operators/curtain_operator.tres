@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="CurtainOperator" format=3 uid="uid://ku2ebyahasyx"]
+
+[ext_resource type="Script" uid="uid://jckuyhtu1ucj" path="res://scenes/main/curtain/curtain_operator.gd" id="1_ks47t"]
+
+[resource]
+script = ExtResource("1_ks47t")
+metadata/_custom_type_script = "uid://jckuyhtu1ucj"

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bxfmlb5qew67v"]
+
+[ext_resource type="Script" uid="uid://cb2rs547gygi0" path="res://scenes/tests/game_tests/game_test.gd" id="1_gpdv8"]
+[ext_resource type="PackedScene" uid="uid://bjmsv64ryafxd" path="res://scenes/main/curtain/curtain.tscn" id="1_t82gy"]
+[ext_resource type="Resource" uid="uid://ku2ebyahasyx" path="res://scenes/main/operators/curtain_operator.tres" id="2_gpdv8"]
+[ext_resource type="PackedScene" uid="uid://cr1ojwod8hxcw" path="res://scenes/game/game.tscn" id="3_bfwwf"]
+
+[node name="GameTest" type="Node" unique_id=704207484]
+script = ExtResource("1_gpdv8")
+
+[node name="Curtain" parent="." unique_id=195555415 instance=ExtResource("1_t82gy")]
+curtain_operator = ExtResource("2_gpdv8")
+
+[node name="Game" parent="." unique_id=346745799 instance=ExtResource("3_bfwwf")]
