@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://dy24qm4k2ev2s" path="res://scenes/main/src/main.gd" id="1_iuonh"]
 [ext_resource type="Resource" uid="uid://ku2ebyahasyx" path="res://scenes/main/operators/curtain_operator.tres" id="2_6q06x"]
 [ext_resource type="PackedScene" uid="uid://bjmsv64ryafxd" path="res://scenes/main/curtain/curtain.tscn" id="2_k2fmo"]
-[ext_resource type="PackedScene" uid="uid://cfoe2y4shtix0" path="res://scenes/environment/environment.tscn" id="4_ow5a4"]
 [ext_resource type="PackedScene" uid="uid://cr1ojwod8hxcw" path="res://scenes/game/game.tscn" id="5_hujxm"]
+[ext_resource type="PackedScene" uid="uid://c0wlvdl6homui" path="res://scenes/main/misc/peeker/peeker.tscn" id="6_hujxm"]
 [ext_resource type="FontFile" uid="uid://crw7u70s1we37" path="res://assets/fonts/lost_tumbler_font/Lost Tumbler.ttf" id="6_ow5a4"]
 
 [node name="Main" type="Node" unique_id=2111695777]
@@ -13,8 +13,6 @@ curtain_operator = ExtResource("2_6q06x")
 
 [node name="Curtain" parent="." unique_id=195555415 instance=ExtResource("2_k2fmo")]
 curtain_operator = ExtResource("2_6q06x")
-
-[node name="Environment" parent="." unique_id=1249255955 instance=ExtResource("4_ow5a4")]
 
 [node name="Game" parent="." unique_id=346745799 instance=ExtResource("5_hujxm")]
 
@@ -27,3 +25,6 @@ text = "Masked mauri
 press space to start"
 font = ExtResource("6_ow5a4")
 font_size = 64
+
+[node name="Peeker" parent="." unique_id=1676597725 instance=ExtResource("6_hujxm")]
+transform = Transform3D(0.92998207, 0, 0.36760527, 0, 0.9999999, 0, -0.36760527, 0, 0.92998207, 14.615554, 3.6712108, 34.297577)

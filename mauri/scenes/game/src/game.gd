@@ -19,10 +19,7 @@ func enable_camera(enabled : bool) -> void:
 func _ready() -> void:
 	set_processing(false)
 	enable_camera(false)
-	
-	if get_tree().root.get_child(0).name == "Main":
-		test_environment.visible = false
-	
+
 	
 ## Method used for launching the game
 func start_game():

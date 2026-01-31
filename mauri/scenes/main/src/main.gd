@@ -20,18 +20,18 @@ func _process(delta: float) -> void:
 			proc_wait_state(delta)
 				
 
-func proc_init(delta : float) -> void:
+func proc_init(_delta : float) -> void:
 	print("Initializing, moving to intro state..")
 	state = State.INTRO	
 	
 	
 	
-func proc_intro(delta : float) -> void:
+func proc_intro(_delta : float) -> void:
 	curtain_operator.fade_in(1.0)
 	state = State.WAIT
 	
 
-func proc_wait_state(delta) -> void:
+func proc_wait_state(_delta) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		print("Space was pressed, activating the game state")
 		await curtain_operator.fade_out().curtain_faded_out
