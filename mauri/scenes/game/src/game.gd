@@ -1,6 +1,7 @@
 class_name Game extends Node
 
 enum State {INIT, WAIT, RUN, END}
+var state : State = State.INIT
 @onready var game_camera: Camera3D = $GameCamera
 
 @export var curtain_operator : CurtainOperator
@@ -22,8 +23,29 @@ func enable_camera(enabled : bool) -> void:
  
 ## Initialize with disabled processing, wait for start method
 func _ready() -> void:
-	set_processing(false)
+	#set_processing(false)
 	enable_camera(false)
+	
+func _process(delta: float) -> void:
+	match state:
+		State.INIT:
+			proc_init(delta)
+		State.RUN:
+			proc_run(delta)
+		State.END:
+			proc_end_state(delta)
+
+func proc_init(delta: float) -> void:
+	pass
+
+func proc_run(delta: float) -> void:
+	pass
+	
+func proc_end_state(_delta) -> void:
+	if Input.is_action_just_pressed("ui_accept"):
+		print("Space was pressed, resetting the game state")
+		level.reset()
+		start_game()
 
 ## Method used for launching the game
 func start_game():
@@ -31,3 +53,9 @@ func start_game():
 	await curtain_operator.fade_in(2.0).curtain_faded_in
 	await countdown_ui.start_countdown(3.0)
 	level.enable_level(true)
+	state = State.RUN
+
+
+func _on_music_player_finished() -> void:
+	state = State.END
+	level.enable_level(false)

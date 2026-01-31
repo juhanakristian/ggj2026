@@ -5,23 +5,44 @@ class_name Level extends Node3D
 @export var music_player: AudioStreamPlayer3D
 const NOTE_INDICATOR = preload("uid://d4mag1cos3fya")
 
+@onready var note_1: Sprite3D = $"../NoteContainer/NOTE1"
+@onready var note_2: Sprite3D = $"../NoteContainer/NOTE2"
+@onready var note_3: Sprite3D = $"../NoteContainer/NOTE3"
+@onready var note_4: Sprite3D = $"../NoteContainer/NOTE4"
+
+@onready var points_label: Label = $"../PointsLabel"
+
 const NOTE1 = "c"
 const NOTE2 = "d"
 const NOTE3 = "e"
 const NOTE4 = "f"
 
 var level_notes: Array[String] = [NOTE1,NOTE2,NOTE3,NOTE4]
-
+var note_sprites: Dictionary[String, Sprite3D] = {}
 var current_time: float = 0
 
 const MAX_RECEIVED_POINTS = 1000
 
 var points: int = 0
 
+var original_y = 0
+
+func format_points(value: int) -> String:
+	var s = "00000" + str(value)
+	return s.substr(s.length() - 5, 5)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	original_y = self.position.y
 	# Load level data
 	level_data.init_level()
+
+	note_sprites = {
+		NOTE1: note_1,
+		NOTE2: note_2,
+		NOTE3: note_3,
+		NOTE4: note_4,
+	}
 
 	# Create lanes and "note" objects
 	var note_index = 0
@@ -36,6 +57,10 @@ func _ready() -> void:
 		note_index += 1
 		
 	set_process(false)
+	
+func reset() -> void:
+	current_time = 0
+	self.position.y = original_y
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -54,14 +79,20 @@ func enable_level(enable):
 
 func _on_note_controller_note_pressed(note: String) -> void:
 	var result = level_data.do_note_check(note, current_time + 0.2) # latency hack
+	var sprite = note_sprites[note]
 	if result.note_event:
 		#print("Note time: " + str(result.note_event.start_time))
 		points += (1.0 - abs(result.timedelta)) * MAX_RECEIVED_POINTS
+		sprite.modulate = Color(0, 1, 0)
 	elif abs(result.timedelta) < 0.150:
 		points += (1.0 - abs(result.timedelta)) * MAX_RECEIVED_POINTS / 2
-
-	
+		sprite.modulate = Color(1, 1, 0)
+	else:
+		sprite.modulate = Color(1, 0, 0)
+		
+	points_label.text = format_points(points) + " PTS"
 
 
 func _on_note_controller_note_released(note: String) -> void:
-	pass # Replace with function body.
+	var sprite = note_sprites[note]
+	sprite.modulate = Color(1, 1, 1)
