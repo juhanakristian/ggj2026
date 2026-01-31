@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dggsr1d3cafuk"
-path.s3tc="res://.godot/imported/character_placeholder_sheet.png-12d2a4266a3028b60325c8f8b8554746.s3tc.ctex"
+path="res://.godot/imported/character_placeholder_sheet.png-12d2a4266a3028b60325c8f8b8554746.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://assets/characters/character_placeholder/character_placeholder_sheet.png"
-dest_files=["res://.godot/imported/character_placeholder_sheet.png-12d2a4266a3028b60325c8f8b8554746.s3tc.ctex"]
+dest_files=["res://.godot/imported/character_placeholder_sheet.png-12d2a4266a3028b60325c8f8b8554746.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

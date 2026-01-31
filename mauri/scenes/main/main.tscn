@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cr1ojwod8hxcw" path="res://scenes/game/game.tscn" id="5_hujxm"]
 [ext_resource type="PackedScene" uid="uid://c0wlvdl6homui" path="res://scenes/main/misc/peeker/peeker.tscn" id="6_hujxm"]
 [ext_resource type="FontFile" uid="uid://crw7u70s1we37" path="res://assets/fonts/lost_tumbler_font/Lost Tumbler.ttf" id="6_ow5a4"]
+[ext_resource type="AudioStream" uid="uid://blynqhknqlaih" path="res://assets/audio/music.mp3" id="7_hujxm"]
 
 [node name="Main" type="Node" unique_id=2111695777]
 script = ExtResource("1_iuonh")
@@ -28,3 +29,8 @@ font_size = 64
 
 [node name="Peeker" parent="." unique_id=1676597725 instance=ExtResource("6_hujxm")]
 transform = Transform3D(0.92998207, 0, 0.36760527, 0, 0.9999999, 0, -0.36760527, 0, 0.92998207, 14.615554, 3.6712108, 34.297577)
+
+[node name="IntroMusicPlayer" type="AudioStreamPlayer3D" parent="." unique_id=1456553032]
+stream = ExtResource("7_hujxm")
+autoplay = true
+bus = &"IntroMusic"
