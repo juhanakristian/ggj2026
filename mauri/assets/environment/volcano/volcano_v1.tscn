@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://drrh2ba65d0gg"]
+
+[ext_resource type="PackedScene" uid="uid://b51rv1ugeue6n" path="res://assets/environment/volcano/volcano_v1.glb" id="1_8jc81"]
+[ext_resource type="Material" uid="uid://batffm35u18lh" path="res://assets/environment/materials/volcano_material/volcano_material.tres" id="2_c3pyl"]
+[ext_resource type="Material" uid="uid://d3rdu7ahbcx1m" path="res://assets/environment/materials/sand_material/sand_material.tres" id="3_aj343"]
+[ext_resource type="Material" uid="uid://chqs308cov6k2" path="res://assets/environment/materials/wood_material/wood_material.tres" id="4_812qg"]
+[ext_resource type="Material" uid="uid://x03juqusnec4" path="res://assets/environment/materials/lava_material/lava_material.tres" id="5_2rgl6"]
+[ext_resource type="Material" uid="uid://ds2q4iv8obc4q" path="res://assets/environment/materials/water_material/water_material.tres" id="6_8d766"]
+[ext_resource type="Material" uid="uid://ccemhaelpvl5b" path="res://assets/environment/materials/palm_material/palm_material.tres" id="7_k8ukg"]
+
+[node name="volcano_v1" unique_id=1239595514 instance=ExtResource("1_8jc81")]
+
+[node name="volcano" parent="." index="0" unique_id=1029788337]
+surface_material_override/0 = ExtResource("2_c3pyl")
+
+[node name="island" parent="." index="1" unique_id=958841195]
+surface_material_override/0 = ExtResource("3_aj343")
+
+[node name="sign" parent="." index="2" unique_id=1359385783]
+surface_material_override/0 = ExtResource("4_812qg")
+
+[node name="volcano_lava" parent="." index="3" unique_id=764541157]
+surface_material_override/0 = ExtResource("5_2rgl6")
+
+[node name="Hut" parent="." index="4" unique_id=877011987]
+surface_material_override/0 = ExtResource("4_812qg")
+
+[node name="support" parent="." index="5" unique_id=1025326739]
+surface_material_override/0 = ExtResource("4_812qg")
+
+[node name="water" parent="." index="6" unique_id=47952174]
+surface_material_override/0 = ExtResource("6_8d766")
+
+[node name="palm_group_001" parent="." index="7" unique_id=934212182]
+surface_material_override/0 = ExtResource("7_k8ukg")
+
+[node name="Hut_001" parent="." index="8" unique_id=84022158]
+surface_material_override/0 = ExtResource("4_812qg")
+
+[node name="palm_group_002" parent="." index="10" unique_id=886035637]
+transform = Transform3D(0.95632267, 0, 0.29231322, 0, 1, 0, -0.29231322, 0, 0.95632267, 36.738964, 1.1566966, -0.5362959)
+surface_material_override/0 = ExtResource("7_k8ukg")
+
+[node name="palm_group" parent="." index="11" unique_id=683754911]
+surface_material_override/0 = ExtResource("7_k8ukg")

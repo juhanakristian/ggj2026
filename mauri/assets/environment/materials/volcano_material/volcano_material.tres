@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://batffm35u18lh"]
+
+[ext_resource type="Texture2D" uid="uid://c1n1wprg2qlda" path="res://assets/environment/materials/volcano_material/Mauri_BG_volcano.png" id="1_10r33"]
+
+[resource]
+albedo_texture = ExtResource("1_10r33")

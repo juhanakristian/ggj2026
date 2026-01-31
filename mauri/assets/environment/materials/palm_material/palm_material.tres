@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ccemhaelpvl5b"]
+
+[ext_resource type="Texture2D" uid="uid://denm45q165t1s" path="res://assets/environment/materials/palm_material/Mauri_BG_palm.png" id="1_y3325"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_y3325")

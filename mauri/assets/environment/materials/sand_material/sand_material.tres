@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d3rdu7ahbcx1m"]
+
+[ext_resource type="Texture2D" uid="uid://bwi37hofi3j1a" path="res://assets/environment/materials/sand_material/Mauri_BG_sand.png" id="1_8vyji"]
+
+[resource]
+albedo_texture = ExtResource("1_8vyji")

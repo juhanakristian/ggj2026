@@ -18,7 +18,7 @@ curtain_operator = ExtResource("2_6q06x")
 [node name="Game" parent="." unique_id=346745799 instance=ExtResource("5_hujxm")]
 
 [node name="MenuCamera" type="Camera3D" parent="." unique_id=543731230]
-transform = Transform3D(0.9038662, 0, 0.4278154, 0, 1, 0, -0.4278154, 0, 0.9038662, 15.255781, 5, 40.5995)
+transform = Transform3D(0.9038662, 0, 0.4278154, 0, 1, 0, -0.4278154, 0, 0.9038662, 17.840939, 5, 40.5995)
 
 [node name="Label3D" type="Label3D" parent="." unique_id=626493288]
 transform = Transform3D(0.9333613, 0, 0.35893816, 0, 1, 0, -0.35893816, 0, 0.9333613, 15.539572, 4.8898125, 34.576096)
@@ -28,7 +28,7 @@ font = ExtResource("6_ow5a4")
 font_size = 64
 
 [node name="Peeker" parent="." unique_id=1676597725 instance=ExtResource("6_hujxm")]
-transform = Transform3D(0.92998207, 0, 0.36760527, 0, 0.9999999, 0, -0.36760527, 0, 0.92998207, 14.615554, 3.6712108, 34.297577)
+transform = Transform3D(0.39766043, 0, 0.91753274, 0, 0.99999976, 0, -0.91753274, 0, 0.39766043, -21.384445, 3.6712108, 20.21429)
 
 [node name="IntroMusicPlayer" type="AudioStreamPlayer3D" parent="." unique_id=1456553032]
 stream = ExtResource("7_hujxm")

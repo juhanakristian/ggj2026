@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://chqs308cov6k2"]
+
+[ext_resource type="Texture2D" uid="uid://d0rfhw3nngy0d" path="res://assets/environment/materials/wood_material/wood_stage.png" id="1_oop5e"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_oop5e")
