@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://d4mag1cos3fya"]
+
+[ext_resource type="Texture2D" uid="uid://rdxic0y40g2s" path="res://assets/misc/masks/Mauri_mask.png" id="1_y2d2g"]
+
+[node name="Note" type="Node3D" unique_id=55334165]
+
+[node name="Node3D" type="Sprite3D" parent="." unique_id=982755848]
+texture = ExtResource("1_y2d2g")
