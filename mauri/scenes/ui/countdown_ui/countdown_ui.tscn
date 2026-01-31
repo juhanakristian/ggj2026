@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cats1mblrfh8s"]
+
+[ext_resource type="Script" uid="uid://vgncblbrfj8o" path="res://scenes/ui/countdown_ui/counter.gd" id="1_kc2gt"]
+[ext_resource type="FontFile" uid="uid://crw7u70s1we37" path="res://assets/fonts/lost_tumbler_font/Lost Tumbler.ttf" id="2_wojvk"]
+
+[node name="CountdownUI" type="CanvasLayer" unique_id=1228888125]
+script = ExtResource("1_kc2gt")
+
+[node name="CountdownLabel" type="RichTextLabel" parent="." unique_id=324087396]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("2_wojvk")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "NA"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CountdownTimer" type="Timer" parent="." unique_id=1224062520]
+one_shot = true
