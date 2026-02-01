@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://blynqhknqlaih" path="res://assets/audio/music.mp3" id="7_hujxm"]
 [ext_resource type="Script" uid="uid://cohe14cnx3vw5" path="res://scenes/game/controller/note_controller.gd" id="8_b1x3f"]
 [ext_resource type="PackedScene" uid="uid://cab1knnj3r7e6" path="res://scenes/game/dancer/dancer.tscn" id="9_a8run"]
+[ext_resource type="PackedScene" uid="uid://cpe67xixjxhx8" path="res://scenes/game/dancer/dancer_npc.tscn" id="10_a8run"]
 
 [node name="Main" type="Node" unique_id=2111695777]
 script = ExtResource("1_iuonh")
@@ -60,5 +61,14 @@ transform = Transform3D(0.9333613, 0, 0.35893816, 0, 1, 0, -0.35893816, 0, 0.933
 text = "and press space to start"
 font = ExtResource("6_ow5a4")
 font_size = 58
+
+[node name="Dancer" parent="." unique_id=1133877386 instance=ExtResource("10_a8run")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.977701, 2.385763, 18.970764)
+
+[node name="Dancer2" parent="." unique_id=1038559936 instance=ExtResource("10_a8run")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.977701, 2.385763, 18.970764)
+
+[node name="Dancer3" parent="." unique_id=2134520085 instance=ExtResource("10_a8run")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.33716, 2.385763, 15.970764)
 
 [connection signal="note_mask_updated" from="NoteController" to="NoteController/Dancer" method="_on_note_mask_updated"]

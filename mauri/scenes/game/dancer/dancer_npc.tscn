@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cpe67xixjxhx8"]
+
+[ext_resource type="PackedScene" uid="uid://cab1knnj3r7e6" path="res://scenes/game/dancer/dancer.tscn" id="1_jctob"]
+[ext_resource type="SpriteFrames" uid="uid://d3tfxy2g637dm" path="res://scenes/game/dancer/sprite_frames/npc_spframes.tres" id="2_3xn35"]
+
+[node name="Dancer" unique_id=898125721 instance=ExtResource("1_jctob")]
+
+[node name="AnimatedSprite3D" parent="." index="0" unique_id=1351860417]
+sprite_frames = ExtResource("2_3xn35")
