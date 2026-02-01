@@ -14,9 +14,18 @@ var state : State = State.INIT
 @onready var note_container: Node3D = $NoteContainer
 
 @onready var reset_label: Label = $GameUI/ResetLabel
+@onready var high_score_label: Label = $GameUI/HighScoreLabel
 
+## Stores the high score
+var high_score = 0
 
 signal game_started()
+
+func update_high_score(new_score) -> void:
+	if new_score > high_score:
+		high_score = new_score
+	high_score_label.text = level.format_points(high_score) + " PTS"
+		
 
 ## Sets processing flags
 func set_processing(enabled : bool):
@@ -70,6 +79,7 @@ func start_game():
 	game_ui.visible = true
 	note_container.visible = true
 	note_controller.lock_controller(false)
+	
 
 
 func _on_music_player_finished() -> void:
@@ -77,5 +87,8 @@ func _on_music_player_finished() -> void:
 	level.enable_level(false)
 	reset_label.visible = true
 
+	note_container.visible = false
 	game_ui.visible = true
 	note_controller.lock_controller(true)
+	update_high_score(level.points)
+	level.visible = false

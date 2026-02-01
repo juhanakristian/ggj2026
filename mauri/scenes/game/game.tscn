@@ -101,6 +101,34 @@ text = "Try again
 press space"
 label_settings = SubResource("LabelSettings_kp23o")
 
+[node name="HighScoreLabel" type="Label" parent="GameUI" unique_id=876099266]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -272.0
+offset_top = 45.0
+offset_right = -9.0
+offset_bottom = 84.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("3_5jirj")
+theme_override_font_sizes/font_size = 28
+text = "00000 PTS"
+horizontal_alignment = 2
+
+[node name="HighScoreTitleLabel" type="Label" parent="GameUI" unique_id=1227614975]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -214.0
+offset_top = 10.0
+offset_right = -9.0
+offset_bottom = 48.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("3_5jirj")
+theme_override_font_sizes/font_size = 28
+text = "HiGH SCORE"
+horizontal_alignment = 2
+
 [connection signal="note_mask_updated" from="NoteController" to="Dancer" method="_on_note_mask_updated"]
 [connection signal="note_pressed" from="NoteController" to="Level" method="_on_note_controller_note_pressed"]
 [connection signal="note_released" from="NoteController" to="Level" method="_on_note_controller_note_released"]
