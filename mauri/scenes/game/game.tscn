@@ -24,6 +24,31 @@ outline_color = Color(0.06053035, 0.06053035, 0.060530342, 1)
 shadow_size = 4
 shadow_color = Color(0.008202022, 0.008202025, 0.008202025, 0)
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_otnwt"]
+emission_shape = 3
+emission_box_extents = Vector3(4.045, 0.45, 3.885)
+gravity = Vector3(0, 1, 0)
+scale_min = 0.19999999
+scale_max = 0.5
+
+[sub_resource type="Gradient" id="Gradient_3xj4h"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5v6r0"]
+gradient = SubResource("Gradient_3xj4h")
+fill = 1
+fill_from = Vector2(0.4957265, 0.508547)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uyinl"]
+transparency = 2
+alpha_scissor_threshold = 0.655
+alpha_antialiasing_mode = 0
+shading_mode = 0
+albedo_texture = SubResource("GradientTexture2D_5v6r0")
+
+[sub_resource type="QuadMesh" id="QuadMesh_10c2w"]
+material = SubResource("StandardMaterial3D_uyinl")
+
 [node name="Game" type="Node" unique_id=346745799]
 script = ExtResource("1_sul5r")
 curtain_operator = ExtResource("2_0sr1o")
@@ -73,6 +98,7 @@ metadata/_custom_type_script = "uid://8dkhit6bgge3"
 
 [node name="MusicPlayer" type="AudioStreamPlayer3D" parent="." unique_id=1768287231]
 stream = ExtResource("7_bdhmt")
+volume_db = 5.234
 
 [node name="CountdownUI" parent="." unique_id=1228888125 instance=ExtResource("10_4j704")]
 
@@ -135,6 +161,13 @@ text = "HiGH SCORE"
 horizontal_alignment = 2
 
 [node name="Shouts" parent="." unique_id=1431427206 instance=ExtResource("15_otnwt")]
+
+[node name="LavaParticles" type="GPUParticles3D" parent="." unique_id=876160416]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.170006, 0)
+amount = 25
+lifetime = 1.6199999999999999
+process_material = SubResource("ParticleProcessMaterial_otnwt")
+draw_pass_1 = SubResource("QuadMesh_10c2w")
 
 [connection signal="note_mask_updated" from="NoteController" to="Dancer" method="_on_note_mask_updated"]
 [connection signal="note_mask_updated" from="NoteController" to="Shouts" method="_on_note_controller_note_mask_updated"]

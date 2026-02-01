@@ -10,6 +10,27 @@
 [ext_resource type="Script" uid="uid://cohe14cnx3vw5" path="res://scenes/game/controller/note_controller.gd" id="8_b1x3f"]
 [ext_resource type="PackedScene" uid="uid://cab1knnj3r7e6" path="res://scenes/game/dancer/dancer.tscn" id="9_a8run"]
 [ext_resource type="PackedScene" uid="uid://cpe67xixjxhx8" path="res://scenes/game/dancer/dancer_npc.tscn" id="10_a8run"]
+[ext_resource type="Texture2D" uid="uid://rdxic0y40g2s" path="res://assets/misc/masks/Mauri_mask.png" id="11_ouso4"]
+[ext_resource type="Shader" uid="uid://dshfb10q760yf" path="res://assets/environment/clouds/rs_cloud.gdshader" id="12_blune"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_th5th"]
+render_priority = 0
+shader = ExtResource("12_blune")
+shader_parameter/noise_scale = 11.24
+shader_parameter/speed = 0.16
+shader_parameter/darkness_amount = 9.155
+shader_parameter/detail = 0.23
+shader_parameter/concentration = 0.0
+shader_parameter/amount = 0.12
+shader_parameter/bloom = 2.0
+shader_parameter/alpha = 8.0
+shader_parameter/cloud_tint = Color(1, 1, 1, 1)
+shader_parameter/edge_fade = -0.035
+shader_parameter/rotation_matrix = Transform2D(1.6, -1.2, 1.2, 1.6, 0, 0)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7smn1"]
+material = SubResource("ShaderMaterial_th5th")
+size = Vector2(1000, 1000)
 
 [node name="Main" type="Node" unique_id=2111695777]
 script = ExtResource("1_iuonh")
@@ -70,5 +91,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.977701, 2.385763, 18.97076
 
 [node name="Dancer3" parent="." unique_id=2134520085 instance=ExtResource("10_a8run")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.33716, 2.385763, 15.970764)
+
+[node name="TheMask" type="Sprite3D" parent="." unique_id=1608530774]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 40.95085, -215.37979)
+visible = false
+texture = ExtResource("11_ouso4")
+
+[node name="Clouds" type="MeshInstance3D" parent="." unique_id=674462936]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -206, 109.32961, 0)
+mesh = SubResource("PlaneMesh_7smn1")
 
 [connection signal="note_mask_updated" from="NoteController" to="NoteController/Dancer" method="_on_note_mask_updated"]

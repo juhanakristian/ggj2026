@@ -3,6 +3,31 @@
 [ext_resource type="Environment" uid="uid://dhierio6ypa3q" path="res://scenes/environment/wenv/wenv.tres" id="2_4ff8o"]
 [ext_resource type="PackedScene" uid="uid://drrh2ba65d0gg" path="res://assets/environment/volcano/volcano_v1.tscn" id="3_als2k"]
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4ff8o"]
+emission_shape = 3
+emission_box_extents = Vector3(4.045, 0.45, 3.885)
+gravity = Vector3(0, 1, 0)
+scale_min = 0.19999999
+scale_max = 0.5
+
+[sub_resource type="Gradient" id="Gradient_3xj4h"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_als2k"]
+gradient = SubResource("Gradient_3xj4h")
+fill = 1
+fill_from = Vector2(0.4957265, 0.508547)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uyinl"]
+transparency = 2
+alpha_scissor_threshold = 0.655
+alpha_antialiasing_mode = 0
+shading_mode = 0
+albedo_texture = SubResource("GradientTexture2D_als2k")
+
+[sub_resource type="QuadMesh" id="QuadMesh_s0v2d"]
+material = SubResource("StandardMaterial3D_uyinl")
+
 [node name="Environment" type="Node3D" unique_id=1249255955]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1851199224]
@@ -13,3 +38,10 @@ shadow_enabled = true
 environment = ExtResource("2_4ff8o")
 
 [node name="volcano_v1" parent="." unique_id=595085194 instance=ExtResource("3_als2k")]
+
+[node name="LavaParticles" type="GPUParticles3D" parent="." unique_id=2026310906]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.170006, 0)
+amount = 25
+lifetime = 1.6199999999999999
+process_material = SubResource("ParticleProcessMaterial_4ff8o")
+draw_pass_1 = SubResource("QuadMesh_s0v2d")
