@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://c4ds0wc603s0j" path="res://assets/misc/keys/Mauri_button_J.png" id="8_3xj4h"]
 [ext_resource type="Texture2D" uid="uid://dsadi3dmuqtcx" path="res://assets/misc/keys/Mauri_button_K.png" id="9_5v6r0"]
 [ext_resource type="PackedScene" uid="uid://cats1mblrfh8s" path="res://scenes/ui/countdown_ui/countdown_ui.tscn" id="10_4j704"]
+[ext_resource type="PackedScene" uid="uid://beq5g8xnrsepb" path="res://scenes/game/shouts/shouts.tscn" id="15_otnwt"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kp23o"]
 font = ExtResource("3_5jirj")
@@ -133,7 +134,10 @@ theme_override_font_sizes/font_size = 28
 text = "HiGH SCORE"
 horizontal_alignment = 2
 
+[node name="Shouts" parent="." unique_id=1431427206 instance=ExtResource("15_otnwt")]
+
 [connection signal="note_mask_updated" from="NoteController" to="Dancer" method="_on_note_mask_updated"]
+[connection signal="note_mask_updated" from="NoteController" to="Shouts" method="_on_note_controller_note_mask_updated"]
 [connection signal="note_pressed" from="NoteController" to="Level" method="_on_note_controller_note_pressed"]
 [connection signal="note_released" from="NoteController" to="Level" method="_on_note_controller_note_released"]
 [connection signal="finished" from="MusicPlayer" to="." method="_on_music_player_finished"]
