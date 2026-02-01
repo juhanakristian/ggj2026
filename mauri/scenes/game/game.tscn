@@ -5,7 +5,6 @@
 [ext_resource type="FontFile" uid="uid://crw7u70s1we37" path="res://assets/fonts/lost_tumbler_font/Lost Tumbler.ttf" id="3_5jirj"]
 [ext_resource type="Script" uid="uid://cohe14cnx3vw5" path="res://scenes/game/controller/note_controller.gd" id="3_87uf6"]
 [ext_resource type="PackedScene" uid="uid://cfoe2y4shtix0" path="res://scenes/environment/environment.tscn" id="3_kelw5"]
-[ext_resource type="Texture2D" uid="uid://dggsr1d3cafuk" path="res://assets/characters/character_placeholder/character_placeholder_sheet.png" id="4_kelw5"]
 [ext_resource type="PackedScene" uid="uid://cab1knnj3r7e6" path="res://scenes/game/dancer/dancer.tscn" id="5_2a8rs"]
 [ext_resource type="Script" uid="uid://8dkhit6bgge3" path="res://scenes/game/level/level.gd" id="5_5i0tg"]
 [ext_resource type="Resource" uid="uid://dhfuoy6a8prn5" path="res://scenes/game/level/example_level.tres" id="6_bdhmt"]
@@ -31,25 +30,11 @@ metadata/_custom_type_script = "uid://cohe14cnx3vw5"
 [node name="Environment" parent="." unique_id=1249255955 instance=ExtResource("3_kelw5")]
 
 [node name="GameCamera" type="Camera3D" parent="." unique_id=617032508]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 14, 11)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29607284, 15.404783, 12.07406)
 visible = false
 
 [node name="Dancer" parent="." unique_id=898125721 instance=ExtResource("5_2a8rs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3835448, 12.248176, 7.204897)
-
-[node name="Character2" type="Sprite3D" parent="." unique_id=72333191]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6164552, 13.045979, 7.204897)
-billboard = 2
-texture = ExtResource("4_kelw5")
-region_enabled = true
-region_rect = Rect2(98.80086, 6.0420723, 113.44855, 169.04582)
-
-[node name="Character3" type="Sprite3D" parent="." unique_id=1356180725]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.291936, 13.045979, 7.204897)
-billboard = 2
-texture = ExtResource("4_kelw5")
-region_enabled = true
-region_rect = Rect2(98.80086, 6.0420723, 113.44855, 169.04582)
+transform = Transform3D(0.615, 0, 0, 0, 0.615, 0, 0, 0, 0.615, -0.43970823, 12.875289, 7.204897)
 
 [node name="NoteContainer" type="Node3D" parent="." unique_id=1980913338]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 14.35601, 0.13668895)
