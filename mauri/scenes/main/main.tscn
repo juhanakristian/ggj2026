@@ -23,7 +23,7 @@ curtain_operator = ExtResource("2_6q06x")
 transform = Transform3D(0.9038662, 0, 0.4278154, 0, 1, 0, -0.4278154, 0, 0.9038662, 17.840939, 5, 40.5995)
 
 [node name="Label3D" type="Label3D" parent="." unique_id=626493288]
-transform = Transform3D(0.9443591, 0, 0.32891607, 0, 1, 0, -0.32891607, 0, 0.9443591, 15.388622, 5.318195, 34.576096)
+transform = Transform3D(0.9443591, 0, 0.32891607, 0, 1, 0, -0.32891607, 0, 0.9443591, 15.388622, 5.415301, 34.576096)
 modulate = Color(0.9392401, 0.9269068, 0.92312264, 1)
 text = "Masked mauri
 "
@@ -31,8 +31,8 @@ font = ExtResource("6_ow5a4")
 font_size = 112
 
 [node name="Label3D2" type="Label3D" parent="." unique_id=398725326]
-transform = Transform3D(0.9333613, 0, 0.35893816, 0, 1, 0, -0.35893816, 0, 0.9333613, 15.539572, 4.2787857, 34.576096)
-text = "Controls
+transform = Transform3D(0.9333613, 0, 0.35893816, 0, 1, 0, -0.35893816, 0, 0.9333613, 15.539572, 4.491199, 34.576096)
+text = "Test Controls
 [ D ] [ F ] [ J ] [ K ]"
 font = ExtResource("6_ow5a4")
 font_size = 77
@@ -53,12 +53,12 @@ script = ExtResource("8_b1x3f")
 metadata/_custom_type_script = "uid://cohe14cnx3vw5"
 
 [node name="Dancer" parent="NoteController" unique_id=898125721 instance=ExtResource("9_a8run")]
-transform = Transform3D(0.8660255, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660255, 11.3486595, 2.415337, 35.77478)
+transform = Transform3D(0.8660255, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660255, 11.3486595, 2.2402246, 35.77478)
 
 [node name="Label3D3" type="Label3D" parent="." unique_id=1991079546]
-transform = Transform3D(0.9333613, 0, 0.35893816, 0, 1, 0, -0.35893816, 0, 0.9333613, 15.539572, 3.4844127, 34.576096)
-text = "press space to start"
+transform = Transform3D(0.9333613, 0, 0.35893816, 0, 1, 0, -0.35893816, 0, 0.9333613, 15.539572, 3.6981344, 34.576096)
+text = "and press space to start"
 font = ExtResource("6_ow5a4")
-font_size = 64
+font_size = 58
 
 [connection signal="note_mask_updated" from="NoteController" to="NoteController/Dancer" method="_on_note_mask_updated"]

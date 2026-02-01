@@ -6,7 +6,7 @@ class_name Dancer extends Node3D
 
 func _ready() -> void:
 	animated_sprite_3d.stop()
-	animated_sprite_3d.frame = 1
+	animated_sprite_3d.frame = 0
 
 func set_frame(frame : int):
 	#print("Dancer::set_frame -> prev:%s new:%s" % [animated_sprite_3d.frame, frame])

@@ -8,4 +8,5 @@ script = ExtResource("1_x4hem")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1351860417]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90796924, 0)
+alpha_cut = 2
 sprite_frames = ExtResource("2_x4hem")

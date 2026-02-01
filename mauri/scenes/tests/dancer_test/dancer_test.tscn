@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cohe14cnx3vw5" path="res://scenes/game/controller/note_controller.gd" id="1_7etse"]
 [ext_resource type="Script" uid="uid://ryj2b010ictv" path="res://scenes/tests/dancer_test/dancer_test.gd" id="1_w8ine"]
 [ext_resource type="PackedScene" uid="uid://cab1knnj3r7e6" path="res://scenes/game/dancer/dancer.tscn" id="2_w8ine"]
+[ext_resource type="Material" uid="uid://d3rdu7ahbcx1m" path="res://assets/environment/materials/sand_material/sand_material.tres" id="4_s3tgq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_s3tgq"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -15,6 +16,12 @@ sky_material = SubResource("ProceduralSkyMaterial_s3tgq")
 background_mode = 2
 sky = SubResource("Sky_f83dx")
 tonemap_mode = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_f83dx"]
+material = ExtResource("4_s3tgq")
+size = Vector2(25, 25)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0e2fk"]
 
 [node name="DancerTest" type="Node3D" unique_id=256278924]
 script = ExtResource("1_w8ine")
@@ -31,6 +38,7 @@ script = ExtResource("1_7etse")
 metadata/_custom_type_script = "uid://cohe14cnx3vw5"
 
 [node name="Dancer" parent="." unique_id=898125721 instance=ExtResource("2_w8ine")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33894205, 0)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1153986489]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 4)
@@ -44,6 +52,14 @@ offset_right = 360.0
 offset_bottom = 376.0
 scroll_active = false
 scroll_following = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1420134816]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.004298687, 0.030687094, -0.048339605)
+mesh = SubResource("PlaneMesh_f83dx")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1643187033]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7333132, 1.0774038, 0)
+mesh = SubResource("BoxMesh_0e2fk")
 
 [connection signal="note_mask_updated" from="NoteController" to="." method="_on_note_controller_note_mask_updated"]
 [connection signal="note_mask_updated" from="NoteController" to="Dancer" method="_on_note_mask_updated"]
