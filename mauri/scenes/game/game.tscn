@@ -12,6 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://c6aelmg1m1q4n" path="res://icon.svg" id="9_kp23o"]
 [ext_resource type="PackedScene" uid="uid://cats1mblrfh8s" path="res://scenes/ui/countdown_ui/countdown_ui.tscn" id="10_4j704"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_kp23o"]
+font = ExtResource("3_5jirj")
+font_size = 64
+
 [node name="Game" type="Node" unique_id=346745799]
 script = ExtResource("1_sul5r")
 curtain_operator = ExtResource("2_0sr1o")
@@ -72,6 +76,23 @@ offset_bottom = 105.0
 theme_override_fonts/font = ExtResource("3_5jirj")
 theme_override_font_sizes/font_size = 28
 text = "00000 PTS"
+
+[node name="ResetLabel" type="Label" parent="GameUI" unique_id=931156971]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -204.5
+offset_top = -41.0
+offset_right = 204.5
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Try again
+press space"
+label_settings = SubResource("LabelSettings_kp23o")
 
 [connection signal="note_mask_updated" from="NoteController" to="Dancer" method="_on_note_mask_updated"]
 [connection signal="note_pressed" from="NoteController" to="Level" method="_on_note_controller_note_pressed"]

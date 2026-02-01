@@ -76,6 +76,10 @@ func enable_level(enable):
 	if enable:
 		music_player.play()
 
+## Resets points and updates the label
+func reset_points() -> void:
+	points = 0
+	update_point_label_text()
 
 func _on_note_controller_note_pressed(note: String) -> void:
 	var result = level_data.do_note_check(note, current_time + 0.2) # latency hack
@@ -90,7 +94,12 @@ func _on_note_controller_note_pressed(note: String) -> void:
 	else:
 		sprite.modulate = Color(1, 0, 0)
 		
+	update_point_label_text()
+
+## Updates the label's text
+func update_point_label_text() -> void:
 	points_label.text = format_points(points) + " PTS"
+
 
 
 func _on_note_controller_note_released(note: String) -> void:

@@ -12,14 +12,20 @@ signal note_released(note : String)
 
 var current_mask = 0
 
+@export var is_locked : bool = true
 ## Player Id is used for finding the correct controls of the user
 @export var player_id : int = 1
-
 
 var action_note_1 : String  = ""
 var action_note_2 : String  = ""
 var action_note_3 : String  = ""
 var action_note_4 : String  = ""
+
+## Locks or unlocks the controller
+func lock_controller(locked) -> void:
+	is_locked = locked
+	set_physics_process(not is_locked)
+	
 
 ## Setup the controller using the exported player id for finding correct mapping
 func _ready() -> void:
