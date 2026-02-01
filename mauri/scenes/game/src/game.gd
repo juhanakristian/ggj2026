@@ -54,10 +54,10 @@ func _process(delta: float) -> void:
 		State.END:
 			proc_end_state(delta)
 
-func proc_init(delta: float) -> void:
+func proc_init(_delta: float) -> void:
 	pass
 
-func proc_run(delta: float) -> void:
+func proc_run(_delta: float) -> void:
 	pass
 	
 func proc_end_state(_delta) -> void:

@@ -15,14 +15,18 @@ var shout_samples: Array[AudioStream] = [
 	preload("res://assets/audio/shouts/10.mp3")
 ]
 
+var init_volume_db = 0.0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	init_volume_db = sample_player.volume_db
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("ui_page_down"):
+		sample_player.volume_db = -80.0
+	if Input.is_action_just_pressed("ui_page_up"):
+		sample_player.volume_db = init_volume_db
 				
 	
 
