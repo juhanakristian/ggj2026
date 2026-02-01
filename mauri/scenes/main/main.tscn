@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://c0wlvdl6homui" path="res://scenes/main/misc/peeker/peeker.tscn" id="6_hujxm"]
 [ext_resource type="FontFile" uid="uid://crw7u70s1we37" path="res://assets/fonts/lost_tumbler_font/Lost Tumbler.ttf" id="6_ow5a4"]
 [ext_resource type="AudioStream" uid="uid://blynqhknqlaih" path="res://assets/audio/music.mp3" id="7_hujxm"]
+[ext_resource type="Script" uid="uid://cohe14cnx3vw5" path="res://scenes/game/controller/note_controller.gd" id="8_b1x3f"]
+[ext_resource type="PackedScene" uid="uid://cab1knnj3r7e6" path="res://scenes/game/dancer/dancer.tscn" id="9_a8run"]
 
 [node name="Main" type="Node" unique_id=2111695777]
 script = ExtResource("1_iuonh")
@@ -21,11 +23,19 @@ curtain_operator = ExtResource("2_6q06x")
 transform = Transform3D(0.9038662, 0, 0.4278154, 0, 1, 0, -0.4278154, 0, 0.9038662, 17.840939, 5, 40.5995)
 
 [node name="Label3D" type="Label3D" parent="." unique_id=626493288]
-transform = Transform3D(0.9333613, 0, 0.35893816, 0, 1, 0, -0.35893816, 0, 0.9333613, 15.539572, 4.8898125, 34.576096)
+transform = Transform3D(0.9443591, 0, 0.32891607, 0, 1, 0, -0.32891607, 0, 0.9443591, 15.388622, 5.318195, 34.576096)
+modulate = Color(0.9392401, 0.9269068, 0.92312264, 1)
 text = "Masked mauri
-press space to start"
+"
 font = ExtResource("6_ow5a4")
-font_size = 64
+font_size = 112
+
+[node name="Label3D2" type="Label3D" parent="." unique_id=398725326]
+transform = Transform3D(0.9333613, 0, 0.35893816, 0, 1, 0, -0.35893816, 0, 0.9333613, 15.539572, 4.2787857, 34.576096)
+text = "Controls
+[ D ] [ F ] [ J ] [ K ]"
+font = ExtResource("6_ow5a4")
+font_size = 77
 
 [node name="Peeker" parent="." unique_id=1676597725 instance=ExtResource("6_hujxm")]
 transform = Transform3D(0.39766043, 0, 0.91753274, 0, 0.99999976, 0, -0.91753274, 0, 0.39766043, -21.384445, 3.6712108, 20.21429)
@@ -37,3 +47,18 @@ autoplay = true
 [node name="Peeker2" parent="." unique_id=33734895 instance=ExtResource("6_hujxm")]
 transform = Transform3D(0.92998207, 0, 0.36760524, 0, 0.99999976, 0, -0.36760524, 0, 0.92998207, 23.550419, 3.6712108, 3.2142906)
 wait_time_sec = 5.0
+
+[node name="NoteController" type="Node" parent="." unique_id=588393881]
+script = ExtResource("8_b1x3f")
+metadata/_custom_type_script = "uid://cohe14cnx3vw5"
+
+[node name="Dancer" parent="NoteController" unique_id=898125721 instance=ExtResource("9_a8run")]
+transform = Transform3D(0.8660255, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660255, 11.3486595, 2.415337, 35.77478)
+
+[node name="Label3D3" type="Label3D" parent="." unique_id=1991079546]
+transform = Transform3D(0.9333613, 0, 0.35893816, 0, 1, 0, -0.35893816, 0, 0.9333613, 15.539572, 3.4844127, 34.576096)
+text = "press space to start"
+font = ExtResource("6_ow5a4")
+font_size = 64
+
+[connection signal="note_mask_updated" from="NoteController" to="NoteController/Dancer" method="_on_note_mask_updated"]
