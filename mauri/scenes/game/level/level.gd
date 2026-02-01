@@ -82,7 +82,7 @@ func reset_points() -> void:
 	update_point_label_text()
 
 func _on_note_controller_note_pressed(note: String) -> void:
-	var result = level_data.do_note_check(note, current_time + 0.2) # latency hack
+	var result = level_data.do_note_check(note, current_time) # latency hack
 	var sprite = note_sprites[note]
 	if result.note_event:
 		#print("Note time: " + str(result.note_event.start_time))
