@@ -98,7 +98,7 @@ visible = false
 texture = ExtResource("11_ouso4")
 
 [node name="Clouds" type="MeshInstance3D" parent="." unique_id=674462936]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 109.32961, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -206, 109.32961, 0)
 mesh = SubResource("PlaneMesh_7smn1")
 
 [connection signal="note_mask_updated" from="NoteController" to="NoteController/Dancer" method="_on_note_mask_updated"]
