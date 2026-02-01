@@ -8,8 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://cab1knnj3r7e6" path="res://scenes/game/dancer/dancer.tscn" id="5_2a8rs"]
 [ext_resource type="Script" uid="uid://8dkhit6bgge3" path="res://scenes/game/level/level.gd" id="5_5i0tg"]
 [ext_resource type="Resource" uid="uid://dhfuoy6a8prn5" path="res://scenes/game/level/example_level.tres" id="6_bdhmt"]
+[ext_resource type="Texture2D" uid="uid://dht5orktcgxir" path="res://assets/misc/keys/Mauri_button_D.png" id="6_ftsea"]
 [ext_resource type="AudioStream" uid="uid://d0tbsafcmlhjm" path="res://assets/audio/audio.mp3" id="7_bdhmt"]
-[ext_resource type="Texture2D" uid="uid://c6aelmg1m1q4n" path="res://icon.svg" id="9_kp23o"]
+[ext_resource type="Texture2D" uid="uid://c2ck38ivq6nno" path="res://assets/misc/keys/Mauri_button_F.png" id="7_otnwt"]
+[ext_resource type="Texture2D" uid="uid://c4ds0wc603s0j" path="res://assets/misc/keys/Mauri_button_J.png" id="8_3xj4h"]
+[ext_resource type="Texture2D" uid="uid://dsadi3dmuqtcx" path="res://assets/misc/keys/Mauri_button_K.png" id="9_5v6r0"]
 [ext_resource type="PackedScene" uid="uid://cats1mblrfh8s" path="res://scenes/ui/countdown_ui/countdown_ui.tscn" id="10_4j704"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kp23o"]
@@ -38,22 +41,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 14.35601, 0.13668895)
 
 [node name="NOTE1" type="Sprite3D" parent="NoteContainer" unique_id=25726806]
 layers = 2
-texture = ExtResource("9_kp23o")
+texture = ExtResource("6_ftsea")
 
 [node name="NOTE2" type="Sprite3D" parent="NoteContainer" unique_id=325122266]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
 layers = 2
-texture = ExtResource("9_kp23o")
+texture = ExtResource("7_otnwt")
 
 [node name="NOTE3" type="Sprite3D" parent="NoteContainer" unique_id=2003147793]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
 layers = 2
-texture = ExtResource("9_kp23o")
+texture = ExtResource("8_3xj4h")
 
 [node name="NOTE4" type="Sprite3D" parent="NoteContainer" unique_id=343355158]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
 layers = 2
-texture = ExtResource("9_kp23o")
+texture = ExtResource("9_5v6r0")
 
 [node name="Level" type="Node3D" parent="." unique_id=1739362813 node_paths=PackedStringArray("music_player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 14.35601, 0)
