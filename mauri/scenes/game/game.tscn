@@ -18,6 +18,10 @@
 [sub_resource type="LabelSettings" id="LabelSettings_kp23o"]
 font = ExtResource("3_5jirj")
 font_size = 64
+outline_size = 5
+outline_color = Color(0.06053035, 0.06053035, 0.060530342, 1)
+shadow_size = 4
+shadow_color = Color(0.008202022, 0.008202025, 0.008202025, 0)
 
 [node name="Game" type="Node" unique_id=346745799]
 script = ExtResource("1_sul5r")

@@ -69,7 +69,7 @@ func _process(delta: float) -> void:
 
 	# print("Current time: " + str(current_time))
 	# print("Music time: " + str(music_player.get_playback_position()))
-	print("POINTS: " + str(points))
+	# print("POINTS: " + str(points))
 
 func enable_level(enable):
 	set_process(enable)

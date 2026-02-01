@@ -11,6 +11,7 @@ var state : State = State.INIT
 @onready var level: Level = $Level
 @onready var countdown_ui: CountdownUI = $CountdownUI
 @onready var note_controller: NoteController = $NoteController
+@onready var note_container: Node3D = $NoteContainer
 
 @onready var reset_label: Label = $GameUI/ResetLabel
 
@@ -33,7 +34,7 @@ func _ready() -> void:
 	enable_camera(false)
 	game_ui.visible = false
 	note_controller.lock_controller(true)
-	
+	note_container.visible = false
 		
 func _process(delta: float) -> void:
 	match state:
@@ -67,6 +68,7 @@ func start_game():
 	level.enable_level(true)
 	state = State.RUN
 	game_ui.visible = true
+	note_container.visible = true
 	note_controller.lock_controller(false)
 
 
