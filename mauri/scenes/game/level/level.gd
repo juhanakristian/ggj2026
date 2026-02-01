@@ -10,7 +10,7 @@ const NOTE_INDICATOR = preload("uid://d4mag1cos3fya")
 @onready var note_3: Sprite3D = $"../NoteContainer/NOTE3"
 @onready var note_4: Sprite3D = $"../NoteContainer/NOTE4"
 
-@onready var points_label: Label = $"../PointsLabel"
+@onready var points_label: Label = $"../GameUI/PointsLabel"
 
 const NOTE1 = "c"
 const NOTE2 = "d"

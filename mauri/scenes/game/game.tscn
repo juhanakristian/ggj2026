@@ -16,13 +16,6 @@
 script = ExtResource("1_sul5r")
 curtain_operator = ExtResource("2_0sr1o")
 
-[node name="PointsLabel" type="Label" parent="." unique_id=893225700]
-offset_right = 191.0
-offset_bottom = 105.0
-theme_override_fonts/font = ExtResource("3_5jirj")
-theme_override_font_sizes/font_size = 28
-text = "00000 PTS"
-
 [node name="NoteController" type="Node" parent="." unique_id=1249968310]
 script = ExtResource("3_87uf6")
 metadata/_custom_type_script = "uid://cohe14cnx3vw5"
@@ -70,6 +63,15 @@ metadata/_custom_type_script = "uid://8dkhit6bgge3"
 stream = ExtResource("7_bdhmt")
 
 [node name="CountdownUI" parent="." unique_id=1228888125 instance=ExtResource("10_4j704")]
+
+[node name="GameUI" type="CanvasLayer" parent="." unique_id=620930527]
+
+[node name="PointsLabel" type="Label" parent="GameUI" unique_id=893225700]
+offset_right = 191.0
+offset_bottom = 105.0
+theme_override_fonts/font = ExtResource("3_5jirj")
+theme_override_font_sizes/font_size = 28
+text = "00000 PTS"
 
 [connection signal="note_mask_updated" from="NoteController" to="Dancer" method="_on_note_mask_updated"]
 [connection signal="note_pressed" from="NoteController" to="Level" method="_on_note_controller_note_pressed"]

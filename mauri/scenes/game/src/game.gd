@@ -3,6 +3,7 @@ class_name Game extends Node
 enum State {INIT, WAIT, RUN, END}
 var state : State = State.INIT
 @onready var game_camera: Camera3D = $GameCamera
+@onready var game_ui: CanvasLayer = $GameUI
 
 @export var curtain_operator : CurtainOperator
 @onready var test_environment: Node3D = $Environment
@@ -16,6 +17,7 @@ signal game_started()
 func set_processing(enabled : bool):
 	set_process(enabled)
 	set_process_input(enabled)
+
 	
 func enable_camera(enabled : bool) -> void:
 	game_camera.visible = enabled
@@ -25,7 +27,8 @@ func enable_camera(enabled : bool) -> void:
 func _ready() -> void:
 	#set_processing(false)
 	enable_camera(false)
-	
+	game_ui.visible = false
+		
 func _process(delta: float) -> void:
 	match state:
 		State.INIT:
@@ -54,8 +57,11 @@ func start_game():
 	await countdown_ui.start_countdown(3.0)
 	level.enable_level(true)
 	state = State.RUN
+	game_ui.visible = true
 
 
 func _on_music_player_finished() -> void:
 	state = State.END
 	level.enable_level(false)
+
+	game_ui.visible = false
