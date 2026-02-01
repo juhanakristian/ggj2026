@@ -32,13 +32,17 @@ surface_material_override/0 = ExtResource("4_812qg")
 surface_material_override/0 = ExtResource("6_8d766")
 
 [node name="palm_group_001" parent="." index="7" unique_id=934212182]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.398296, 2.1461937, 7.4586225)
 surface_material_override/0 = ExtResource("7_k8ukg")
 
 [node name="Hut_001" parent="." index="8" unique_id=84022158]
 surface_material_override/0 = ExtResource("4_812qg")
 
+[node name="rising_lava" parent="." index="9" unique_id=1225211799]
+surface_material_override/0 = ExtResource("5_2rgl6")
+
 [node name="palm_group_002" parent="." index="10" unique_id=886035637]
-transform = Transform3D(0.95632267, 0, 0.29231322, 0, 1, 0, -0.29231322, 0, 0.95632267, 36.738964, 1.1566966, -0.5362959)
+transform = Transform3D(0.95632267, 0, 0.29231322, 0, 1, 0, -0.29231322, 0, 0.95632267, 35.19235, 1.1566966, -1.84832)
 surface_material_override/0 = ExtResource("7_k8ukg")
 
 [node name="palm_group" parent="." index="11" unique_id=683754911]
