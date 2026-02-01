@@ -78,6 +78,7 @@ func start_game():
 	state = State.RUN
 	game_ui.visible = true
 	note_container.visible = true
+	level.visible = true
 	note_controller.lock_controller(false)
 	
 

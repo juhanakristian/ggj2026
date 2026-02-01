@@ -63,7 +63,7 @@ font = ExtResource("6_ow5a4")
 font_size = 58
 
 [node name="Dancer" parent="." unique_id=1133877386 instance=ExtResource("10_a8run")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.977701, 2.385763, 18.970764)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.977701, 2.385763, 17.60224)
 
 [node name="Dancer2" parent="." unique_id=1038559936 instance=ExtResource("10_a8run")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.977701, 2.385763, 18.970764)
