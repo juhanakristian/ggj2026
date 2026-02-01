@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://beq5g8xnrsepb"]
+
+[ext_resource type="Script" uid="uid://dn0hynpedfc2w" path="res://scenes/game/shouts/shouts.gd" id="1_4bip4"]
+
+[node name="Shouts" type="Node" unique_id=1431427206]
+script = ExtResource("1_4bip4")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1370737329]
